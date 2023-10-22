@@ -24,5 +24,8 @@ export async function POST(request: NextRequest) {
   if (!validation.success) {
     return NextResponse.json(validation.error.errors, { status: 400 });
   }
-  return NextResponse.json({ id: 3, name: body.name, price: body.price });
+  return NextResponse.json(
+    { id: 3, name: body.name, price: body.price },
+    { status: 201 }
+  );
 }
